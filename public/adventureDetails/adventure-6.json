@@ -1,0 +1,19 @@
+{
+    "id": 6,
+    "title": "Mangrove Kayaking Adventure",
+    "image": "https://i.ibb.co.com/TYy0w4D/mangrove.jpg",
+    "category": "Kayaking",
+    "shortDescription": "Paddle through serene mangrove forests and support conservation efforts.",
+    "cost": 600,
+    "bookingAvailability": "Available",
+    "location": "Krabi, Thailand",
+    "duration": "2 Days",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Kayaks", "Meals", "Guided tours"],
+    "ecoFriendlyFeatures": ["Mangrove restoration support", "Eco-certified guides"],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Wear comfortable clothing",
+      "Bring biodegradable sunscreen"
+    ]
+  }

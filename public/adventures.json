@@ -1,0 +1,48 @@
+[
+    {
+      "title": "Amazon Rainforest Trek",
+      "image": "https://i.ibb.co.com/nCfK08s/Amazon-Forests.jpg",
+      "ecoFriendlyFeatures": ["Solar-powered equipment", "Leave No Trace policy"]
+    },
+    {
+      "title": "Arctic Wildlife Expedition",
+      "image": "https://i.ibb.co.com/m8xjQSn/arctic.jpg",
+      "ecoFriendlyFeatures": ["Eco-friendly cruise ship", "Waste management systems"]
+    },
+    {
+      "title": "Desert Eco-Camping",
+      "image": "https://i.ibb.co.com/1rRVPz7/desert.jpg",
+      "ecoFriendlyFeatures": ["Compost toilets", "Solar-powered lanterns"]
+    },
+    {
+      "title": "Great Barrier Reef Dive",
+      "image": "https://i.ibb.co.com/7K1tymc/reef.jpg",
+      "ecoFriendlyFeatures": ["Eco-certified operators", "Marine conservation efforts"]
+    },
+    {
+      "title": "Alpine Hiking Retreat",
+      "image": "https://i.ibb.co.com/vwgvYXz/alpine.jpg",
+      "ecoFriendlyFeatures": ["Minimal-impact trails", "Reusable water bottles"]
+    },
+    {
+      "title": "Mangrove Kayaking Adventure",
+      "image": "https://i.ibb.co.com/TYy0w4D/mangrove.jpg",
+      "ecoFriendlyFeatures": ["Mangrove restoration support", "Eco-certified guides"]
+    },
+    {
+      "title": "Rainforest Canopy Walk",
+      "image": "https://i.ibb.co.com/mcF24zw/canopy.jpg",
+      "ecoFriendlyFeatures": ["Built using sustainable materials", "Wildlife education"]
+    },
+    {
+      "title": "Volcanic Hot Springs Escape",
+      "image": "https://i.ibb.co.com/GHkGBbC/hot-springs.jpg",
+      "ecoFriendlyFeatures": ["Geothermal heating", "Minimal energy footprint"]
+    },
+    {
+      "title": "Sustainable Vineyard Tour",
+      "image": "https://i.ibb.co.com/dJN15WY/st-francis.jpg",
+      "ecoFriendlyFeatures": ["Organic farming practices", "Zero-waste operations"]
+    }
+  ]
+  

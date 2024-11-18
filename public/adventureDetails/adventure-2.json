@@ -1,0 +1,19 @@
+{
+    "id": 2,
+    "title": "Arctic Wildlife Expedition",
+    "image": "https://i.ibb.co.com/m8xjQSn/arctic.jpg",
+    "category": "Wildlife Watching",
+    "shortDescription": "Experience Arctic wildlife and pristine landscapes in an eco-friendly cruise.",
+    "cost": 2500,
+    "bookingAvailability": "Limited Availability",
+    "location": "Svalbard, Norway",
+    "duration": "10 Days",
+    "adventureLevel": "Intermediate",
+    "includedItems": ["Cruise accommodation", "Guided wildlife tours", "Meals"],
+    "ecoFriendlyFeatures": ["Eco-friendly cruise ship", "Waste management systems"],
+    "maxGroupSize": 30,
+    "specialInstructions": [
+      "Wear insulated clothing",
+      "Avoid disturbing wildlife"
+    ]
+  }

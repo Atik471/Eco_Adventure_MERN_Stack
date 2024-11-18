@@ -1,0 +1,19 @@
+{
+    "id": 5,
+    "title": "Alpine Hiking Retreat",
+    "image": "https://i.ibb.co.com/vwgvYXz/alpine.jpg",
+    "category": "Mountain Hiking",
+    "shortDescription": "Reconnect with nature on this sustainable alpine hiking adventure.",
+    "cost": 1000,
+    "bookingAvailability": "Available",
+    "location": "Swiss Alps, Switzerland",
+    "duration": "4 Days",
+    "adventureLevel": "Intermediate",
+    "includedItems": ["Guided hikes", "Meals", "Eco-lodge stays"],
+    "ecoFriendlyFeatures": ["Minimal-impact trails", "Reusable water bottles"],
+    "maxGroupSize": 15,
+    "specialInstructions": [
+      "Pack appropriate hiking boots",
+      "Bring layers for varying weather"
+    ]
+  }

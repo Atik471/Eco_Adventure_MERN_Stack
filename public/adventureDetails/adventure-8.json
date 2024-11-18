@@ -1,0 +1,19 @@
+{
+    "id": 8,
+    "title": "Volcanic Hot Springs Escape",
+    "image": "https://i.ibb.co.com/GHkGBbC/hot-springs.jpg",
+    "category": "Wellness",
+    "shortDescription": "Relax in natural hot springs powered by volcanic geothermal energy.",
+    "cost": 500,
+    "bookingAvailability": "Available",
+    "location": "Reykjavik, Iceland",
+    "duration": "2 Days",
+    "adventureLevel": "Easy",
+    "includedItems": ["Spa access", "Towels", "Guided tour"],
+    "ecoFriendlyFeatures": ["Geothermal heating", "Minimal energy footprint"],
+    "maxGroupSize": 12,
+    "specialInstructions": [
+      "Bring swimwear",
+      "Avoid staying too long in hot water"
+    ]
+  }

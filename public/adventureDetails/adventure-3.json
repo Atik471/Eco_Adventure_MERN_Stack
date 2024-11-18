@@ -1,0 +1,19 @@
+{
+    "id": 3,
+    "title": "Desert Eco-Camping",
+    "image": "https://i.ibb.co.com/1rRVPz7/desert.jpg",
+    "category": "Camping",
+    "shortDescription": "Enjoy a sustainable camping experience under the stars in the desert.",
+    "cost": 800,
+    "bookingAvailability": "Available",
+    "location": "Sahara Desert, Morocco",
+    "duration": "3 Days",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Eco-tents", "Meals", "Guided tours"],
+    "ecoFriendlyFeatures": ["Compost toilets", "Solar-powered lanterns"],
+    "maxGroupSize": 20,
+    "specialInstructions": [
+      "Bring sun protection gear",
+      "Hydrate frequently"
+    ]
+  }

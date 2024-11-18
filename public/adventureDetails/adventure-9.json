@@ -1,0 +1,19 @@
+{
+    "id": 9,
+    "title": "Sustainable Vineyard Tour",
+    "image": "https://i.ibb.co.com/dJN15WY/st-francis.jpg",
+    "category": "Cultural Experience",
+    "shortDescription": "Learn about organic winemaking and enjoy eco-friendly tastings.",
+    "cost": 400,
+    "bookingAvailability": "Available",
+    "location": "Napa Valley, USA",
+    "duration": "1 Day",
+    "adventureLevel": "Easy",
+    "includedItems": ["Winery tours", "Tastings", "Snacks"],
+    "ecoFriendlyFeatures": ["Organic farming practices", "Zero-waste operations"],
+    "maxGroupSize": 20,
+    "specialInstructions": [
+      "Drink responsibly",
+      "Carry a reusable water bottle"
+    ]
+}

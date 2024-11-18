@@ -1,0 +1,19 @@
+{
+    "id": 4,
+    "title": "Great Barrier Reef Dive",
+    "image": "https://i.ibb.co.com/7K1tymc/reef.jpg",
+    "category": "Diving",
+    "shortDescription": "Dive into the wonders of the Great Barrier Reef in a conservation-focused tour.",
+    "cost": 1500,
+    "bookingAvailability": "Available",
+    "location": "Cairns, Australia",
+    "duration": "5 Days",
+    "adventureLevel": "Advanced",
+    "includedItems": ["Scuba gear", "Dive guides", "Meals"],
+    "ecoFriendlyFeatures": ["Eco-certified operators", "Marine conservation efforts"],
+    "maxGroupSize": 8,
+    "specialInstructions": [
+      "Scuba certification required",
+      "Avoid touching coral reefs"
+    ]
+  }

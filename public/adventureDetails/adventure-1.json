@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "title": "Amazon Rainforest Trek",
+    "image": "https://i.ibb.co.com/nCfK08s/Amazon-Forests.jpg",
+    "category": "Jungle Exploration",
+    "shortDescription": "Explore the heart of the Amazon with a guided trek through lush rainforests.",
+    "cost": 1200,
+    "bookingAvailability": "Available",
+    "location": "Manaus, Brazil",
+    "duration": "7 Days",
+    "adventureLevel": "Advanced",
+    "includedItems": ["Guided tours", "Meals", "Camping gear", "Transfers"],
+    "ecoFriendlyFeatures": ["Solar-powered equipment", "Leave No Trace policy"],
+    "maxGroupSize": 12,
+    "specialInstructions": [
+      "Pack light and bring waterproof gear",
+      "Vaccination required for tropical diseases"
+    ]
+  }

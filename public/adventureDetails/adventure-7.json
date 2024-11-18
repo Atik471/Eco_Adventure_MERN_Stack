@@ -1,0 +1,19 @@
+{
+    "id": 7,
+    "title": "Rainforest Canopy Walk",
+    "image": "https://i.ibb.co.com/mcF24zw/canopy.jpg",
+    "category": "Nature Walk",
+    "shortDescription": "Discover the rainforest canopy on an eco-friendly suspended walkway.",
+    "cost": 300,
+    "bookingAvailability": "Available",
+    "location": "Borneo, Malaysia",
+    "duration": "1 Day",
+    "adventureLevel": "Beginner",
+    "includedItems": ["Guide services", "Lunch", "Park entry"],
+    "ecoFriendlyFeatures": ["Built using sustainable materials", "Wildlife education"],
+    "maxGroupSize": 15,
+    "specialInstructions": [
+      "Wear sturdy walking shoes",
+      "Carry a reusable water bottle"
+    ]
+  }
