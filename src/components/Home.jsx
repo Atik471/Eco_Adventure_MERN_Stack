@@ -1,8 +1,9 @@
+import Adventures from "./Adventures";
 
 const Home = () => {
     return (
         <div>
-            home
+            <Adventures></Adventures>
         </div>
     );
 };

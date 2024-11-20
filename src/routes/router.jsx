@@ -7,6 +7,8 @@ import Register from "../components/Register"
 import UpdateProfile from "../components/UpdateProfile"
 import UserProfile from "../components/UserProfile"
 import AdventureDetails from "../components/AdventureDetails"
+import AdventureProvider from "../context/AdventureProvider";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,10 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <Home></Home>,
+                element: 
+                <AdventureProvider>
+                    <Home />
+                </AdventureProvider>,
             },
             {
                 path: "update-profile",
@@ -28,7 +33,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "adventure-details/:id",
-                element: <AdventureDetails></AdventureDetails>
+                element: 
+                <PrivateRoute>
+                    <AdventureDetails></AdventureDetails>
+                </PrivateRoute>
             }
         ]
     },
