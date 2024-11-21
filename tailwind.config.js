@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        amatic: ['"Amatic SC"', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
+      },
+      colors: {
+        primary: "#6CA12B",
+      },
+    },
   },
   plugins: [],
 }

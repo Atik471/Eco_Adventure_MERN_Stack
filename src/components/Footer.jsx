@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div>
+        <div className="sticky bottom-0">
             footer
         </div>
     );

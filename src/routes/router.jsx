@@ -37,17 +37,18 @@ const router = createBrowserRouter([
                 <PrivateRoute>
                     <AdventureDetails></AdventureDetails>
                 </PrivateRoute>
-            }
+            },
+            {
+                path: "login",
+                element: <Login></Login>
+            },
+            {
+                path: "register",
+                element: <Register></Register>
+            },
         ]
     },
-    {
-        path: "/login",
-        element: <Login></Login>
-    },
-    {
-        path: "register",
-        element: <Register></Register>
-    },
+    
     {
         path: "*", 
         element: <ErrorPage /> 
