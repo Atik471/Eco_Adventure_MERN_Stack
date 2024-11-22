@@ -1,23 +1,29 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { BiShow, BiHide } from "react-icons/bi";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+   const [loading, setLoading] = useState(false);
    const [showPassword, setShowPassword] = useState(false);
+   const navigate = useNavigate()
     const {signInWithEmail, setUser, createWithGoogle} = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setLoading(true);
         const email = e.target.email.value
         const password = e.target.password.value
         signInWithEmail(email, password)
         .then((userCredential) => {
             setUser(userCredential.user)
+            navigate("/")
           })
           .catch((error) => {
             console.error("Error during sign in:", error.message);
+          })
+          .finally(() => {
+            setLoading(false); // Stop loading regardless of success or failure
           });
         e.target.reset()
     }
@@ -26,6 +32,7 @@ const Login = () => {
         createWithGoogle()
         .then((result) => {
             setUser(result.user)
+            navigate("/")
           }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -33,9 +40,13 @@ const Login = () => {
           });
     }
 
+    if(loading)
+      return (
+        <h1 className="text-3xl text-center mx-auto my-[5rem]">Logging In..</h1>
+    )
     return (
         <div>
-            <div className="max-w-[30rem] mx-auto bg-yellow-100 text-center">
+            <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3">
               <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Login</h1>
               </div>

@@ -3,8 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { GiOakLeaf } from "react-icons/gi";
 import { BiMenu } from "react-icons/bi";
+import pfpFallback from "../assets/pfp-fallback.jpg";
 
-// import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false)
@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className="flex items-center md:gap-5 gap-3">
             {
               user ? <button onClick={handleLogout} className="bg-white hover:bg-green-800 transition-all duration-300 text-black hover:text-white md:px-3 px-2 md:py-2 py-1 rounded-lg font-semibold shadow-lg">Logout</button>:
-                     <button onClick={() => navigate("/login")}>Login</button>
+                     <button onClick={() => navigate("/login")} className="bg-white hover:bg-green-800 transition-all duration-300 text-black hover:text-white md:px-3 px-2 md:py-2 py-1 rounded-lg font-semibold shadow-lg">Login</button>
             }
             {user && user.photoURL ? (
               <div className={`md:w-12 w-8 md:h-12 h-8 rounded-[50%] relative group`}
@@ -54,7 +54,13 @@ const Navbar = () => {
                   </div>
               </div>
             ) : (
-              <p>No photo available</p>
+              <div className={`md:w-12 w-8 md:h-12 h-8 rounded-[50%] relative group`}
+              style={{ backgroundImage: `url(${pfpFallback})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                  <div className="absolute text-white opacity-0 group-hover:opacity-100 
+                  transition-opacity duration-300 bg-black bg-opacity-50 rounded-md text-sm top-12 right-5 py-1 px-2">
+                  {'Guest'}
+                  </div>
+              </div>
             )}
             <div className="relative">
               <BiMenu className="block md:hidden text-3xl" onClick={() => {setMobileMenu(!mobileMenu)}}></BiMenu>
