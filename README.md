@@ -9,7 +9,7 @@ EcoAdventure is designed to provide users with a hassle-free way to discover, ex
 ---
 
 ## **Live URL**
-[EcoAdventure Live Demo](https://eco-adventure-21e6c.firebaseapp.com)
+[EcoAdventure Live Demo](https://eco-adventure-21e6c.web.app)
 
 ---
 

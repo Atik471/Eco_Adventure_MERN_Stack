@@ -127,7 +127,7 @@ const UpdateProfile = () => {
                 }
                 
                </div>
-                <input type="submit" value="Update Profile" className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 mb-8 transition-all duration-300 cursor-pointer"/>
+                <input type="submit" value={`${loading ? 'Updating Profile...' : 'Update Profile'}`} className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 mb-8 transition-all duration-300 cursor-pointer"/>
             </form>
             </div>
         </div>

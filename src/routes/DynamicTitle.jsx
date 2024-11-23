@@ -6,7 +6,7 @@ const DynamicTitle = () => {
 
   useEffect(() => {
     const routeTitles = {
-        "/": "Home - GitHub Classroom Link: https://classroom.github.com/a/cM9ek1DG",
+        "/": "Home - EcoAdventure",
         "/update-profile": "Update Profile - EcoAdventure",
         "/my-profile": "My Profile - EcoAdventure",
         "/adventure-details/:id": "Adventure Details - EcoAdventure",
