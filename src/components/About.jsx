@@ -29,7 +29,7 @@ const About = () => {
 
               <div className="relative" data-aos="flip-right" data-aos-duration="1500">
                 <img
-                  src="about-us.jpg"
+                  src="/about-us.jpg"
                   alt="Eco Adventure"
                   className="rounded-lg shadow-lg border-4 border-primary p-4"
                 />

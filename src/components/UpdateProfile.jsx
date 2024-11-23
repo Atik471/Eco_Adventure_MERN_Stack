@@ -119,7 +119,7 @@ const UpdateProfile = () => {
                         <span className='text-primary md:text-lg'>Photo URL:</span>
                         <BiEdit className='md:hidden text-xl mr-3 md:ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
                       </div>
-                      <h1 className='md:text-lg md:whitespace-nowrap md:overflow-hidden'>{user?.photoURL}</h1>
+                      <h1 className='md:text-lg '>{user?.photoURL}</h1>
                     </div>
                     
                     <BiEdit className='md:inline-block hidden text-xl mr-3 ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
