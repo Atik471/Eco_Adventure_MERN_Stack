@@ -50,4 +50,4 @@ EcoAdventure is designed to provide users with a hassle-free way to discover, ex
 For any questions or feedback, please feel free to reach out:
 - **Author**: Atikur Rahman
 - **Email**: atiksafinmd1@gmail.com
-- **LinkedIn**: [LinkedIn](nkedin.com/in/atikur-rahman-9680262b4/)
+- **LinkedIn**: [LinkedIn](linkedin.com/in/atikur-rahman-9680262b4/)
