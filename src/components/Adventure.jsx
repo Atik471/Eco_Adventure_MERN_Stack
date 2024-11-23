@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Adventure = ({ item }) => {
     const { id, title, image, ecoFriendlyFeatures } = item
     return (
-        <div className="rounded-xl flex flex-col p-2 ">
+        <div className="rounded-xl flex flex-col p-2 " data-aos="zoom-in" data-aos-duration="1000" data-aos-delay={`${id*200}`}>
             <div className="w-full h-[30vh] rounded-lg" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
             </div>

@@ -4,7 +4,7 @@ const About = () => {
         <section className="bg-white py-16 px-6 md:px-12 lg:px-24" id="about">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6" data-aos="fade-right" data-aos-duration="1500">
                 <h4 className="text-primary font-semibold text-lg uppercase tracking-widest">
                   About Us
                 </h4>
@@ -27,7 +27,7 @@ const About = () => {
                 </button>
               </div>
 
-              <div className="relative">
+              <div className="relative" data-aos="flip-right" data-aos-duration="1500">
                 <img
                   src="/public/about-us.jpg"
                   alt="Eco Adventure"

@@ -31,7 +31,7 @@ const Services = () => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className={`p-6 rounded-lg shadow-lg transition-all duration-300 ${service.bgColor} ${service.textColor} hover:scale-105 bg-yellow-200`}
+                className={`p-6 rounded-lg shadow-lg transition-all duration-300 ${service.bgColor} ${service.textColor} hover:scale-105 bg-yellow-200`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay={`${service.id*250}`}
               >
                 <h3 className="text-3xl font-bold mb-4">{service.id < 10 ? `0${service.id}` : service.id}</h3>
                 <h4 className="text-2xl font-semibold mb-3">{service.title}</h4>
