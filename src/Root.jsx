@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import DynamicTitle from "./routes/DynamicTitle";
 
 const Root = () => {
     useEffect(() => {
@@ -16,7 +17,7 @@ const Root = () => {
 
     return (
         <div className="font-lato min-h-screen flex flex-col">
-            
+            <DynamicTitle />
             <Navbar />
             <main className="flex-1">
                 <Outlet></Outlet>

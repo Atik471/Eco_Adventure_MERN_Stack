@@ -3,6 +3,7 @@ import Root from "../Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home";
 import Login from "../components/Login"
+import ForgetPassword from "../components/ForgetPassword"
 import Register from "../components/Register"
 import UpdateProfile from "../components/UpdateProfile"
 import UserProfile from "../components/UserProfile"
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register></Register>
+            },
+            {
+                path: "forget-password",
+                element: <ForgetPassword></ForgetPassword>
             },
         ]
     },

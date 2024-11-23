@@ -88,7 +88,7 @@ const Login = () => {
     )
     return (
         <div>
-            <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 my-[3rem]">
+            <div className="max-w-[34rem] md:mx-auto bg-yellow-100 text-center mx-3 my-[3rem]">
               <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Login</h1>
               </div>
@@ -109,7 +109,10 @@ const Login = () => {
                 <hr className="flex-grow border-primary" />
             </div>
             <button onClick={handleLoginWithGoogle} className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 transition-all duration-300 max-w-[80%] mb-6">Login with Google</button>
-            <p className="pb-8 text-sm font-semibold">Dont&apos;t Have an Account? <Link to={'/register'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Register</Link></p>
+              <div className="flex justify-between max-w-[80%] mx-auto">
+                <p className="pb-8 text-sm font-semibold">Dont&apos;t Have an Account? <Link to={'/register'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Register</Link></p>
+                <p className="pb-8 text-sm font-semibold"><Link to={'/forget-password'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Forgot Password?</Link></p>
+              </div>
             </div>
         </div>
     );
