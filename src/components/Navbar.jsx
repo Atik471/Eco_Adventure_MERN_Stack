@@ -5,7 +5,6 @@ import { GiOakLeaf } from "react-icons/gi";
 import { BiMenu } from "react-icons/bi";
 import pfpFallback from "../assets/pfp-fallback.jpg";
 
-
 const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false)
     const navigate = useNavigate();
@@ -71,9 +70,6 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-          
-          
-          
         </div>
     );
 };

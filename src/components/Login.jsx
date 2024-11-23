@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Login = () => {
    const [loading, setLoading] = useState(false);
@@ -18,12 +21,30 @@ const Login = () => {
         .then((userCredential) => {
             setUser(userCredential.user)
             navigate("/")
+            toast.success(`Login successful! Welcome back!`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           })
           .catch((error) => {
-            console.error("Error during sign in:", error.message);
+            const errorMessage = error.message;
+            toast.error(`Login failed: ${errorMessage.split('/')[1].slice(0, -2)}`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            })
           })
           .finally(() => {
-            setLoading(false); // Stop loading regardless of success or failure
+            setLoading(false); 
           });
         e.target.reset()
     }
@@ -33,10 +54,28 @@ const Login = () => {
         .then((result) => {
             setUser(result.user)
             navigate("/")
+            toast.success(`Login successful! Welcome back!`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console(errorCode, errorMessage)
+            toast.error(`Login failed: ${errorMessage}`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           });
     }
 

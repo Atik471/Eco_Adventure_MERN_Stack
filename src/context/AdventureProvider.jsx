@@ -19,6 +19,8 @@ const AdventureProvider = ({ children }) => {
         fetchData();
     }, []);
 
+    if(!adventure) return <>Loading...</>
+
     return (
         <AdventureContext.Provider value={{ adventure }}>
             {children}

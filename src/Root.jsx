@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 const Root = () => {
     return (
         <div className="font-lato">
+            
             <Navbar />
             <Outlet></Outlet>
             <Footer />
