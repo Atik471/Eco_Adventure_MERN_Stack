@@ -16,9 +16,9 @@ const UpdateProfile = () => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(e.target); // Using FormData for better form handling
+    const formData = new FormData(e.target); 
 
-    let displayName = formData.get("name"); // Get value from the 'name' field
+    let displayName = formData.get("name");
     let photoURL = formData.get("photo"); 
     if (!displayName) {
       displayName = user.displayName
@@ -47,7 +47,7 @@ const UpdateProfile = () => {
     } catch (error) {
       console.error("Profile update failed:", error);
       setLoading(false);
-      toast.error(`Porfile update failed: ${errorMessage}`, {
+      toast.error(`Porfile update failed: ${error.errorMessage}`, {
         position: "top-center",
         autoClose: 3000, 
         hideProgressBar: false,
@@ -61,7 +61,7 @@ const UpdateProfile = () => {
 
   return (
     <div>
-            <div className="max-w-[40rem] md:mx-auto shadow-xl rounded-xl text-center mx-3 mb-16">
+            <div className="max-w-[40rem] md:mx-auto shadow-xl rounded-xl text-center mx-3 my-16">
               <div className="bg-primary py-[1rem] rounded-t-lg">
                 <h1 className="text-center text-2xl font-bold text-white">Update Profile</h1>
               </div>

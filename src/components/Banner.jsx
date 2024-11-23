@@ -10,13 +10,6 @@ function Banner() {
     const { adventure } = useContext(AdventureContext)
     if(!adventure) return <>Loading...</>
     console.log(adventure)
-    // const images = [
-    //   `${adventure[0]['image']}`,
-    //   `${adventure[3]['image']}`,
-    //   `${adventure[6]['image']}`,
-    // ];
-    
-  
     
     return (
       <Swiper
@@ -25,10 +18,28 @@ function Banner() {
         pagination={{ clickable: true }} 
         autoplay={{ delay: 3000 }} 
         loop 
-        className="mySwiper"
+        className="mySwiper max-w-[90%] mx-auto h-[30rem] my-8 flex justify-center items-center"
+        
       >
+        <style>{`
+                  .swiper-pagination-bullet {
+                    background-color: #4caf50;
+                  }
+                  .swiper-pagination-bullet-active {
+                    background-color: #6ca12b;
+                  }
+                  .swiper-button-next,
+                  .swiper-button-prev {
+                  transition: all 0.3s;
+                    color: white;
+                  }
+                  .swiper-button-next:hover,
+                  .swiper-button-prev:hover {
+                    color: #4caf50;
+                  }
+        `}</style>
         {adventure.map((item, index) => (
-            (index == 0 || index == 3 || index == 6) &&
+            (index == 0 || index == 3 || index == 8) &&
           <SwiperSlide key={index}>
             <img src={item.image} alt={`Slide ${index + 1}`} className="w-full h-auto" />
           </SwiperSlide>

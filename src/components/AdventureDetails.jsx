@@ -6,17 +6,13 @@ const AdventureDetails = () => {
     const [details, setDetails] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to check current time and open the appropriate action
   const handleTalkWithExpertClick = () => {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
     
-    // If the time is between 10 AM and 8 PM
     if (currentHour >= 10 && currentHour < 20) {
-      // Open Google Meet in a new tab (You can replace the link with a real Google Meet link)
       window.open('https://meet.google.com/new', '_blank');
     } else {
-      // Show modal with consultation hours
       setIsModalOpen(true);
     }
   };

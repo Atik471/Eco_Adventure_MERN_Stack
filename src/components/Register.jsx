@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { BiHide, BiShow } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
     const { setUser, createWithEmail, createWithGoogle} = useContext(AuthContext)
 
     const handleSubmit = (e) => {
@@ -19,8 +20,6 @@ const Register = () => {
 
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordRegex.test(password)) {
-          // If password is invalid, set the error and return
-          setError("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.");
           toast.error("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.", {
               position: "top-center",
               autoClose: 3000,
@@ -30,13 +29,23 @@ const Register = () => {
               draggable: true,
               theme: "colored",
           });
-          return; // Prevent the form submission if password is invalid
+          return; 
       }
         createWithEmail(email, password, displayName, photoURL)
         .then((userCredential) => {
+          setLoading(true); 
             setUser(userCredential.user)
             setError(null)
-            console.log(error)
+            navigate("/")
+            toast.success(`Register successful!`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -62,26 +71,47 @@ const Register = () => {
     const handleRegisterWithGoogle = () => {
         createWithGoogle()
         .then((result) => {
+          setLoading(true); 
             setUser(result.user)
-            
+            navigate("/")
+            toast.success(`Register successful!`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode, errorMessage)
+            toast.error(`Register failed: ${errorMessage}`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
           })
           .finally(() => {
             setLoading(false); 
           });
     }
 
-    if(loading)
+    if(loading){
       return (
         <h1 className="text-3xl text-center mx-auto my-[5rem]">Registering Your Account..</h1>
     )
+    }
+      
 
     return (
         <div>
-          <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 mb-[3rem]">
+          <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 my-[3rem]">
             <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Register</h1>
             </div>
