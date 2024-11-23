@@ -113,13 +113,13 @@ const UpdateProfile = () => {
                     <BiX className='md:inline-block hidden text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setPhoto(!editphoto)}}></BiX>
                   </div>
                   :
-                  <div className='flex justify-between items-center w-full py-2'>
-                    <div className='flex gap-3 flex-col items-start'>
+                  <div className='flex justify-between items-start w-full py-2'>
+                    <div className='flex gap-3 flex-col items-start w-[90%]'>
                       <div className="flex gap-4 items-center">
                         <span className='text-primary md:text-lg'>Photo URL:</span>
                         <BiEdit className='md:hidden text-xl mr-3 md:ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
                       </div>
-                      <h1 className='md:text-lg '>{user?.photoURL}</h1>
+                      <h1 className='md:text-lg overflow-hidden'>{user?.photoURL}</h1>
                     </div>
                     
                     <BiEdit className='md:inline-block hidden text-xl mr-3 ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
