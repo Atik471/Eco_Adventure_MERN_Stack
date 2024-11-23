@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { GiOakLeaf } from "react-icons/gi";
@@ -9,8 +9,21 @@ const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false)
     const navigate = useNavigate();
     const { logout, user, setUser } = useContext(AuthContext)
+    const menuRef = useRef(null);
 
-    //console.log(user.photoURL)
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          setMobileMenu(false);
+        }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+  
 
     const handleLogout = () => {
         logout()
@@ -61,12 +74,12 @@ const Navbar = () => {
                   </div>
               </div>
             )}
-            <div className="relative">
+            <div className="relative" ref={menuRef}>
               <BiMenu className="block md:hidden text-3xl" onClick={() => {setMobileMenu(!mobileMenu)}}></BiMenu>
               <ul className={`${mobileMenu ? "flex" : "hidden"} flex-col gap-3 md:gap-6 absolute right-0 text-md bg-primary rounded-2xl p-3 w-[90vw] border-2 text-center`}>
-                <NavLink to={"/"} className={"border-b-2 border-white transition-all duration-300  font-semibold p-1"}>Home</NavLink>
-                <NavLink to={"/update-profile"} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>Update Profile</NavLink>
-                <NavLink to={"/my-profile"} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>My Profile</NavLink>
+                <NavLink to={"/"} onClick={() => setMobileMenu(false)} className={"border-b-2 border-white transition-all duration-300  font-semibold p-1"}>Home</NavLink>
+                <NavLink to={"/update-profile"} onClick={() => setMobileMenu(false)} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>Update Profile</NavLink>
+                <NavLink to={"/my-profile"} onClick={() => setMobileMenu(false)} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>My Profile</NavLink>
               </ul>
             </div>
           </div>

@@ -43,9 +43,9 @@ const AdventureDetails = () => {
     }
 
     return (
-        <div className="px-auto px-[5%] py-8 pt-2 ">
+        <div className="px-auto px-[5%] py-[3rem] ">
           <div className="flex flex-col lg:flex-row items-start gap-8">
-            <div className="w-[70%] mb-[3rem]">
+            <div className="md:w-[70%] md:mb-[3rem]">
               <img
                 src={details.image}
                 alt={details.title}
@@ -54,7 +54,7 @@ const AdventureDetails = () => {
             </div>
             <div className="w-full lg:w-3/5">
               <h1 className="text-3xl font-bold text-gray-800 mb-4">{details.title}</h1>
-              <p className="text-lg text-gray-600 mb-6">{details.shortDescription}</p>
+              <p className="md:text-lg text-gray-600 mb-6">{details.shortDescription}</p>
               <p className="text-sm font-medium text-white bg-primary rounded-[1rem] px-2 inline-block mb-2">
                 {details.bookingAvailability}
               </p>
@@ -67,7 +67,7 @@ const AdventureDetails = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-3 md:gap-5">
             <div className="mt-8 shadow-md rounded-lg p-6 bg-yellow-200 border-primary/20 border-2">
               <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 mb-4">What’s Included</h2>
               <ul className="pl-2 text-gray-600 space-y-2">
@@ -109,11 +109,11 @@ const AdventureDetails = () => {
             </div>
           </div>
           <button
-        onClick={handleTalkWithExpertClick}
-        className="bg-blue-500 text-white p-3 rounded-lg"
-      >
+            onClick={handleTalkWithExpertClick}
+            className="mx-auto shadow-xl bg-primary hover:bg-[#50771f] transition-all duration-300 font-bold text-white p-3 rounded-lg mt-16 my-8"
+          >
         Talk with Expert
-      </button>
+        </button>
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-80">

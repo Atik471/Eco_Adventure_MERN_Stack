@@ -1,24 +1,39 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Core Swiper styles
+import "swiper/css";
 import "swiper/css/navigation"; 
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../context/AdventureProvider";
 
 function Banner() {
     const { adventure } = useContext(AdventureContext)
-    if(!adventure) return <>Loading...</>
-    console.log(adventure)
+
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      if (adventure) {
+        setIsLoaded(true); 
+      }
+    }, [adventure]);
+
+    if (!isLoaded) return <div>Loading...</div>;
     
+
     return (
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation 
         pagination={{ clickable: true }} 
-        autoplay={{ delay: 3000 }} 
+        autoplay={{
+          delay: 3000,   
+          disableOnInteraction: false,
+          waitForTransition: true,
+        }}
+        slidesPerView={1}
+        speed={1000}
         loop 
-        className="mySwiper max-w-[90%] mx-auto h-[30rem] my-8 flex justify-center items-center"
+        className="mySwiper md:max-w-[90%] md:mx-auto mx-4 md:h-[30rem] h-[10rem] my-8 flex justify-center items-center"
         
       >
         <style>{`

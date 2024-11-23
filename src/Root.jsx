@@ -12,6 +12,7 @@ const Root = () => {
           duration: 1000,
           easing: "ease-in-out",
         //   delay: 500,
+            once: true,
         });
       }, []);
 

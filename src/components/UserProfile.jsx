@@ -6,9 +6,9 @@ const UserProfile = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col items-center rounded-lg shadow-lg max-w-md mx-auto mt-[4rem] mb-[6rem]">
+    <div className="flex flex-col items-center rounded-lg shadow-lg mx-4 md:max-w-md md:mx-auto mt-[4rem] mb-[6rem]">
       <div className="bg-primary py-[1rem] rounded-t-lg w-full">
-        <h1 className="text-center text-2xl font-bold text-white">Welcome {user.displayName}!</h1>
+        <h1 className="text-center text-xl md:text-2xl font-bold text-white">Welcome {user.displayName}!</h1>
       </div>
       <div className='flex my-8 w-[80%] gap-6'>
         {

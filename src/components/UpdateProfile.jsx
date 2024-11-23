@@ -4,12 +4,15 @@ import { updateProfile } from 'firebase/auth';
 import { BiX, BiEdit } from 'react-icons/bi';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom';
 
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
   const [editname, setEditName] = useState(false);
   const [editphoto, setPhoto] = useState(false)
+  const navigate = useNavigate()
 
 
   const handleSubmit = async (e) => {
@@ -35,6 +38,7 @@ const UpdateProfile = () => {
       });
 
       setLoading(false);
+      navigate('/my-profile')
       toast.success(`Login successful! Welcome back!`, {
         position: "top-center",
         autoClose: 3000, 
@@ -70,19 +74,25 @@ const UpdateProfile = () => {
                 {
                   editname ?
                   <div className='w-full flex items-center gap-2'>
-                    <div className='flex gap-3 justify-center w-full'>
-                      <span className='text-primary text-lg'>Username:</span>
-                      <input className="border-2 border-primary text-lg rounded-md p-1 w-full " type='text' placeholder="Username" name="name" defaultValue={user?.displayName}/>
+                    <div className='flex flex-col gap-3 justify-center w-full'>
+                      <div className="flex gap-4 items-center">
+                        <span className='text-primary md:text-lg'>Username:</span>
+                        <BiX className='md:hidden text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setEditName(!editname)}}></BiX>
+                      </div>
+                      <input className="border-2 border-primary md:text-lg rounded-md p-1 w-full " type='text' placeholder="Username" name="name" defaultValue={user?.displayName}/>
                     </div>
-                    <BiX className='text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setEditName(!editname)}}></BiX>
+                    <BiX className='md:inline-block hidden text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setEditName(!editname)}}></BiX>
                   </div>
                   :
-                  <div className='flex justify-between items-center w-full  py-2 '>
-                    <div className='flex gap-3'>
-                      <span className='text-primary text-lg'>Username:</span>
-                      <h1 className='text-lg w-full'>{user?.displayName}</h1>
+                  <div className='flex justify-between items-center w-full py-2 '>
+                    <div className='flex gap-3 flex-col items-start'>
+                      <div className="flex gap-4 items-center">
+                        <span className='text-primary md:text-lg'>Username:</span>
+                        <BiEdit className='md:hidden text-xl mr-3 cursor-pointer text-primary' onClick={() => {setEditName(!editname)}}></BiEdit>
+                      </div>
+                      <h1 className='md:text-lg w-full'>{user?.displayName}</h1>
                     </div>
-                    <BiEdit className='text-xl mr-3 cursor-pointer text-primary' onClick={() => {setEditName(!editname)}}></BiEdit>
+                    <BiEdit className='md:inline-block hidden text-xl mr-3 cursor-pointer text-primary' onClick={() => {setEditName(!editname)}}></BiEdit>
                   </div>
                   // 
                 }
@@ -92,21 +102,27 @@ const UpdateProfile = () => {
                 {
                   editphoto ?
                   <div className='w-full flex items-center gap-2'>
-                    <div className='flex gap-3 justify-center w-full items-center'>
-                      <span className='text-primary text-lg block whitespace-nowrap'>Photo URL:</span>
-                      <input className="border-2 border-primary text-lg rounded-md p-1 w-full" type='text' placeholder="Photo URL" defaultValue={user?.photoURL} name="photo"/>
+                    <div className='flex md:gap-3 justify-center w-full flex-col items-start'>
+                      <div className="flex gap-4 items-center">
+                        <span className='text-primary md:text-lg block whitespace-nowrap'>Photo URL:</span>
+                        <BiX className='md:hidden text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setPhoto(!editphoto)}}></BiX>
+                      </div>
+                      <input className="border-2 border-primary md:text-lg rounded-md p-1 w-full" type='text' placeholder="Photo URL" defaultValue={user?.photoURL} name="photo"/>
                     </div>
                     
-                    <BiX className='text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setPhoto(!editphoto)}}></BiX>
+                    <BiX className='md:inline-block hidden text-2xl font-bold mr-3 cursor-pointer text-primary'  onClick={() => {setPhoto(!editphoto)}}></BiX>
                   </div>
                   :
-                  <div className='flex justify-between items-center w-full  py-2'>
-                    <div className='flex gap-3'>
-                      <span className='text-primary text-lg'>Photo URL:</span>
-                      <h1 className='text-lg whitespace-nowrap overflow-hidden'>{user?.photoURL}</h1>
+                  <div className='flex justify-between items-center w-full py-2'>
+                    <div className='flex gap-3 flex-col items-start'>
+                      <div className="flex gap-4 items-center">
+                        <span className='text-primary md:text-lg'>Photo URL:</span>
+                        <BiEdit className='md:hidden text-xl mr-3 md:ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
+                      </div>
+                      <h1 className='md:text-lg md:whitespace-nowrap md:overflow-hidden'>{user?.photoURL}</h1>
                     </div>
                     
-                    <BiEdit className='text-xl mr-3 ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
+                    <BiEdit className='md:inline-block hidden text-xl mr-3 ml-4 cursor-pointer text-primary' onClick={() => {setPhoto(!editphoto)}}></BiEdit>
                   </div>
                 }
                 

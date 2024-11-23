@@ -23,9 +23,9 @@ const Footer = () => {
                   </p>
                 </div>
 
-                <div className="w-full md:w-1/3 text-right">
+                <div className="w-full md:w-1/3 md:text-right">
                   <h4 className="text-xl font-semibold text-white mb-4">Follow Us</h4>
-                  <div className="flex space-x-4 justify-end">
+                  <div className="flex space-x-4 md:justify-end">
                     <a href="https://www.facebook.com/atikur.rahman.424121" target="_blank" className="text-gray-300 hover:text-blue-500 transition">
                       <FaFacebook></FaFacebook>
                     </a>
