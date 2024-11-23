@@ -4,6 +4,26 @@ import { useParams } from "react-router-dom";
 const AdventureDetails = () => {
     const id = useParams()
     const [details, setDetails] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to check current time and open the appropriate action
+  const handleTalkWithExpertClick = () => {
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    
+    // If the time is between 10 AM and 8 PM
+    if (currentHour >= 10 && currentHour < 20) {
+      // Open Google Meet in a new tab (You can replace the link with a real Google Meet link)
+      window.open('https://meet.google.com/new', '_blank');
+    } else {
+      // Show modal with consultation hours
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -92,6 +112,26 @@ const AdventureDetails = () => {
               </p>
             </div>
           </div>
+          <button
+        onClick={handleTalkWithExpertClick}
+        className="bg-blue-500 text-white p-3 rounded-lg"
+      >
+        Talk with Expert
+      </button>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg w-80">
+            <h2 className="text-xl font-bold mb-4">Consultation Time</h2>
+            <p>Our consultation hours are from 10:00 AM to 8:00 PM.</p>
+            <button
+              onClick={closeModal}
+              className="mt-4 bg-red-500 text-white p-2 rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
         </div>
     );
 };

@@ -25,11 +25,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "update-profile",
-                element: <UpdateProfile></UpdateProfile>
+                element: <PrivateRoute>
+                    <UpdateProfile></UpdateProfile>
+                </PrivateRoute>
             },
             {
-                path: "user-profile",
-                element: <UserProfile></UserProfile>
+                path: "my-profile",
+                element: <PrivateRoute>
+                    <UserProfile></UserProfile>
+                </PrivateRoute>
             },
             {
                 path: "adventure-details/:id",

@@ -24,7 +24,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="flex justify-between bg-primary text-white px-3 md:px-[5%] py-4 items-center sticky top-0 mb-8 md:mb-[4rem] shadow-lg">
+        <div className="z-50 flex justify-between bg-primary text-white px-3 md:px-[5%] py-4 items-center sticky top-0  shadow-lg">
           <div>
             <Link to={"/"}  className="flex gap-2 md:gap-3 items-center">
               <GiOakLeaf className="text-green-900 md:text-4xl text-2xl"></GiOakLeaf>
@@ -35,7 +35,7 @@ const Navbar = () => {
           <ul className="md:flex hidden gap-6 text-md">
               <NavLink to={"/"} className={"border-b-2 border-transparent hover:border-white transition-all duration-300  font-semibold p-1"}>Home</NavLink>
               <NavLink to={"/update-profile"} className={"border-b-2 border-transparent hover:border-white transition-all duration-300 font-semibold p-1"}>Update Profile</NavLink>
-              <NavLink to={"/user-profile"} className={"border-b-2 border-transparent hover:border-white transition-all duration-300 font-semibold p-1"}>User Profile</NavLink>
+              <NavLink to={"/my-profile"} className={"border-b-2 border-transparent hover:border-white transition-all duration-300 font-semibold p-1"}>My Profile</NavLink>
           </ul>
           
           
@@ -66,7 +66,7 @@ const Navbar = () => {
               <ul className={`${mobileMenu ? "flex" : "hidden"} flex-col gap-3 md:gap-6 absolute right-0 text-md bg-primary rounded-2xl p-3 w-[90vw] border-2 text-center`}>
                 <NavLink to={"/"} className={"border-b-2 border-white transition-all duration-300  font-semibold p-1"}>Home</NavLink>
                 <NavLink to={"/update-profile"} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>Update Profile</NavLink>
-                <NavLink to={"/user-profile"} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>User Profile</NavLink>
+                <NavLink to={"/my-profile"} className={"border-b-2 border-white transition-all duration-300 font-semibold p-1"}>My Profile</NavLink>
               </ul>
             </div>
           </div>

@@ -4,10 +4,13 @@ import Footer from "./components/Footer";
 
 const Root = () => {
     return (
-        <div className="font-lato">
+        <div className="font-lato min-h-screen flex flex-col">
             
             <Navbar />
-            <Outlet></Outlet>
+            <main className="flex-1">
+                <Outlet></Outlet>
+            </main>
+            
             <Footer />
         </div>
     );

@@ -76,6 +76,9 @@ const Login = () => {
               draggable: true,
               theme: "colored",
             });
+          })
+          .finally(() => {
+            setLoading(false); 
           });
     }
 
@@ -85,7 +88,7 @@ const Login = () => {
     )
     return (
         <div>
-            <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3">
+            <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 mb-[3rem]">
               <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Login</h1>
               </div>

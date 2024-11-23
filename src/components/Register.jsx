@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { BiHide, BiShow } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)
     const { setUser, createWithEmail, createWithGoogle} = useContext(AuthContext)
 
@@ -14,6 +16,22 @@ const Register = () => {
         const password = e.target.password.value
         const displayName = e.target.name.value
         const photoURL = e.target.photourl.value
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+          // If password is invalid, set the error and return
+          setError("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.");
+          toast.error("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+          });
+          return; // Prevent the form submission if password is invalid
+      }
         createWithEmail(email, password, displayName, photoURL)
         .then((userCredential) => {
             setUser(userCredential.user)
@@ -25,6 +43,18 @@ const Register = () => {
             const errorMessage = error.message;
             setError(error.message)
             console.log(errorCode, errorMessage)
+            toast.error(`Register failed: ${errorMessage}`, {
+              position: "top-center",
+              autoClose: 3000, 
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "colored",
+            });
+          })
+          .finally(() => {
+            setLoading(false); 
           });
         e.target.reset()
     }
@@ -37,22 +67,30 @@ const Register = () => {
           }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console(errorCode, errorMessage)
+            console.log(errorCode, errorMessage)
+          })
+          .finally(() => {
+            setLoading(false); 
           });
     }
 
+    if(loading)
+      return (
+        <h1 className="text-3xl text-center mx-auto my-[5rem]">Registering Your Account..</h1>
+    )
+
     return (
         <div>
-          <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3">
+          <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 mb-[3rem]">
             <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Register</h1>
             </div>
             <form onSubmit={handleSubmit} className="flex flex-col max-w-[80%] items-start mx-auto my-8 gap-4">
-                <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type="text" name="name" placeholder="Name"/>
+                <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type="text" name="name" placeholder="Name" required/>
                 <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type="text" name="photourl" placeholder="Photo URL"/>
-                <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type="email" placeholder="Email" name="Email"/>
+                <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type="email" placeholder="Email" name="email" required/>
                 <div className="flex relative w-full">
-                  <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type={`${showPassword ? 'text' : 'password'}`} placeholder="Password" name="password"/>
+                  <input className="bg-yellow-100 py-2 pl-2 border-b-2 border-primary w-full focus:outline-none" type={`${showPassword ? 'text' : 'password'}`} placeholder="Password" name="password" required/>
                   {
                   showPassword ? <BiHide className="text-xl text-green-800 absolute right-3 bottom-3 hover:cursor-pointer" onClick={() => {setShowPassword(!showPassword)}}></BiHide> :
                                  <BiShow className="text-xl text-green-800 absolute right-3 bottom-3 hover:cursor-pointer" onClick={() => {setShowPassword(!showPassword)}}></BiShow>
@@ -66,7 +104,7 @@ const Register = () => {
                   <hr className="flex-grow border-primary" />
             </div>
             <button onClick={handleRegisterWithGoogle} className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 transition-all duration-300 max-w-[80%] mb-6">Register with google</button>
-            <p className="pb-8 text-sm font-semibold">Dont&apos;t Have an Account? <Link to={'/login'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Login</Link></p>
+            <p className="pb-8 text-sm font-semibold">Already have an Account? <Link to={'/login'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Login</Link></p>
           </div>
         </div>
     );
