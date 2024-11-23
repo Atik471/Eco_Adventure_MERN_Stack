@@ -8,6 +8,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [loadingWGoogle, setLoadingWGoogle] = useState(false);
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null)
     const navigate = useNavigate()
     const { setUser, createWithEmail, createWithGoogle} = useContext(AuthContext)
@@ -50,11 +51,9 @@ const Register = () => {
             });
           })
           .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
             setError(error.message)
-            console.log(errorCode, errorMessage)
-            toast.error(`Register failed: ${errorMessage}`, {
+            toast.error(`Register failed: ${errorMessage.split('/')[1].slice(0, -2)}`, {
               position: "top-center",
               autoClose: 3000, 
               hideProgressBar: false,
@@ -86,10 +85,8 @@ const Register = () => {
               theme: "colored",
             });
           }).catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
-            toast.error(`Register failed: ${errorMessage}`, {
+            toast.error(`Register failed: ${errorMessage.split('/')[1].slice(0, -2)}`, {
               position: "top-center",
               autoClose: 3000, 
               hideProgressBar: false,
@@ -129,7 +126,7 @@ const Register = () => {
                   <span className="px-4 text-gray-500">or</span>
                   <hr className="flex-grow border-primary" />
             </div>
-            <button onClick={handleRegisterWithGoogle} className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 transition-all duration-300 max-w-[80%] mb-6">{`${loading ? "Registering with Google..." : "Register with Google"}`}</button>
+            <button onClick={handleRegisterWithGoogle} className="text-lg bg-primary py-2 text-white rounded-lg shadow-md w-full hover:bg-[#5e8b26] font-bold mt-3 transition-all duration-300 max-w-[80%] mb-6">{`${loadingWGoogle ? "Registering with Google..." : "Register with Google"}`}</button>
             <p className="pb-8 text-sm font-semibold">Already have an Account? <Link to={'/login'} className="text-primary ml-1 border-b-2 border-primary/50 hover:border-primary">Login</Link></p>
           </div>
         </div>
