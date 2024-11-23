@@ -73,7 +73,7 @@ const Register = () => {
     const handleRegisterWithGoogle = () => {
         createWithGoogle()
         .then((result) => {
-          setLoading(true); 
+          setLoadingWGoogle(true); 
             setUser(result.user)
             navigate("/")
             toast.success(`Register successful!`, {
@@ -100,14 +100,14 @@ const Register = () => {
             });
           })
           .finally(() => {
-            setLoading(false); 
+            setLoadingWGoogle(false); 
           });
     }
       
 
     return (
-        <div>
-          <div className="max-w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 my-[3rem]">
+        <div className="flex justify-center w-full">
+          <div className="w-[30rem] md:mx-auto bg-yellow-100 text-center mx-3 my-[3rem]">
             <div className="bg-primary py-[1rem]">
                 <h1 className="text-center text-2xl font-bold text-white">Register</h1>
             </div>

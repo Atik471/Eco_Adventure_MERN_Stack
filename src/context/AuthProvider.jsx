@@ -58,7 +58,16 @@ const AuthProvider = ({children}) => {
     }
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <div className="flex justify-center items-center h-screen">
+              <div className="relative">
+                <div className="w-24 h-24 border-4 border-primary border-solid rounded-full animate-spin border-t-transparent"></div>
+                <p className="absolute inset-0 flex items-center justify-center text-primary font-semibold">
+                  Loading...
+                </p>
+              </div>
+            </div>
+          );
     }
 
     return <AuthContext.Provider value={authInfo}>
